@@ -6,7 +6,7 @@ using Elsa.Expressions;
 using Elsa.Services;
 using Elsa.Services.Models;
 
-namespace Rtl.Guides.HelloWorld.WebApp
+namespace Elsa.Guides.HelloWorld.WebApp
 {
     public class HelloWorldHttpWorkflow : IWorkflow
     {

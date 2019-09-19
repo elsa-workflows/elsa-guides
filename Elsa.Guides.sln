@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.HelloWorld.Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.RecurringTask.ConsoleApp", "src\Elsa.Guides.RecurringTask.ConsoleApp\Elsa.Guides.RecurringTask.ConsoleApp.csproj", "{B79BC733-39A1-471F-9A4E-155DB5A69DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.Guides.HelloWorld.WebApp", "Rtl.Guides.HelloWorld.WebApp\Rtl.Guides.HelloWorld.WebApp.csproj", "{E1216530-DBBC-43BC-8B4F-72E95C7A181D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.HelloWorld.WebApp", "src\Elsa.Guides.HelloWorld.WebApp\Elsa.Guides.HelloWorld.WebApp.csproj", "{AF1859EB-A819-421E-BC60-62FD239ADE1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{B79BC733-39A1-471F-9A4E-155DB5A69DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B79BC733-39A1-471F-9A4E-155DB5A69DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B79BC733-39A1-471F-9A4E-155DB5A69DD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1216530-DBBC-43BC-8B4F-72E95C7A181D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1216530-DBBC-43BC-8B4F-72E95C7A181D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1216530-DBBC-43BC-8B4F-72E95C7A181D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1216530-DBBC-43BC-8B4F-72E95C7A181D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1859EB-A819-421E-BC60-62FD239ADE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1859EB-A819-421E-BC60-62FD239ADE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1859EB-A819-421E-BC60-62FD239ADE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1859EB-A819-421E-BC60-62FD239ADE1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

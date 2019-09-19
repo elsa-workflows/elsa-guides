@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Rtl.Guides.HelloWorld.WebApp
+namespace Elsa.Guides.HelloWorld.WebApp
 {
     public class Program
     {
