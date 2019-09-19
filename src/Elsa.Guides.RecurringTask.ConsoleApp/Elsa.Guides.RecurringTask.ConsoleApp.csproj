@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Elsa.Activities.Console" Version="1.0.0.16-beta3" />
+      <PackageReference Include="Elsa.Activities.Timers" Version="1.0.0.16-beta3" />
+      <PackageReference Include="Elsa.Core" Version="1.0.0.16-beta3" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.2.0" />
+    </ItemGroup>
+
+</Project>
