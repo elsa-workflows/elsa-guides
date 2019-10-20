@@ -2,12 +2,12 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Elsa.Activities.Console" Version="1.0.0.16-beta3" />
-      <PackageReference Include="Elsa.Core" Version="1.0.0.16-beta3" />
+      <PackageReference Include="Elsa.Activities.Console" Version="1.0.0.67-rc1" />
+      <PackageReference Include="Elsa.Core" Version="1.0.0.67-rc1" />
     </ItemGroup>
 
 </Project>

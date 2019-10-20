@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.HelloWorld.WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.DocumentApproval.WebApp", "src\Elsa.Guides.DocumentApproval.WebApp\Elsa.Guides.DocumentApproval.WebApp.csproj", "{809A0DC5-826A-4F2A-BCA2-132B151E1B6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Guides.Dashboard.WebApp", "src\Elsa.Guides.Dashboard.WebApp\Elsa.Guides.Dashboard.WebApp.csproj", "{7EBBA06C-0F36-48F4-9610-C0E68F5CDB0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,11 @@ Global
 		{809A0DC5-826A-4F2A-BCA2-132B151E1B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{809A0DC5-826A-4F2A-BCA2-132B151E1B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{809A0DC5-826A-4F2A-BCA2-132B151E1B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBBA06C-0F36-48F4-9610-C0E68F5CDB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBBA06C-0F36-48F4-9610-C0E68F5CDB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBBA06C-0F36-48F4-9610-C0E68F5CDB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBBA06C-0F36-48F4-9610-C0E68F5CDB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

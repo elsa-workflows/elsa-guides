@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
         <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Elsa.Activities.Http" Version="1.0.0.16-beta3" />
         <PackageReference Include="Elsa.Core" Version="1.0.0.16-beta3" />
-        <PackageReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>

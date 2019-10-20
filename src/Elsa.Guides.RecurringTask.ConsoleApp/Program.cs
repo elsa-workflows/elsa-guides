@@ -14,7 +14,7 @@ namespace Elsa.Guides.RecurringTask.ConsoleApp
     {
         static async Task Main(string[] args)
         {
-            var host = new HostBuilder()
+            var host = Host.CreateDefaultBuilder()
                 .ConfigureServices(ConfigureServices)
                 .ConfigureLogging(logging => logging.AddConsole())
                 .UseConsoleLifetime()
