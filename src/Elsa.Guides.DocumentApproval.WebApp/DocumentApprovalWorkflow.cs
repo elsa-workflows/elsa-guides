@@ -31,7 +31,7 @@ namespace Elsa.Guides.DocumentApproval.WebApp
                     x =>
                     {
                         x.VariableName = "Document";
-                        x.ValueExpression = new JavaScriptExpression<ExpandoObject>("lastResult().ParsedContent");
+                        x.ValueExpression = new JavaScriptExpression<ExpandoObject>("lastResult().Content");
                     }
                 )
                 .Then<SendEmail>(
