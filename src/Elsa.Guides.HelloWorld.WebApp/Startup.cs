@@ -11,14 +11,14 @@ namespace Elsa.Guides.HelloWorld.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddWorkflows()
-                .AddHttpActivities();
+                .AddElsa()
+                .AddHttpActivities()
+                .AddWorkflow<HelloWorldHttpWorkflow>();
         }
 
-        public void Configure(IApplicationBuilder app, IWorkflowRegistry workflowRegistry)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseHttpActivities();
-            workflowRegistry.RegisterWorkflow<HelloWorldHttpWorkflow>();
         }
     }
 }

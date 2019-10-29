@@ -22,16 +22,16 @@ namespace Elsa.Guides.DocumentApproval.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddWorkflows()
+                .AddElsa()
                 .AddHttpActivities(options => options.Bind(Configuration.GetSection("Http")))
                 .AddEmailActivities(options => options.Bind(Configuration.GetSection("Smtp")))
-                .AddTimerActivities(options => options.Bind(Configuration.GetSection("BackgroundRunner")));
+                .AddTimerActivities(options => options.Bind(Configuration.GetSection("BackgroundRunner")))
+                .AddWorkflow<DocumentApprovalWorkflow>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IWorkflowRegistry workflowRegistry)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseHttpActivities();
-            workflowRegistry.RegisterWorkflow<DocumentApprovalWorkflow>();
         }
     }
 }

@@ -2,13 +2,14 @@ using System;
 using System.Dynamic;
 using System.Net;
 using System.Net.Http;
-using Elsa.Activities.ControlFlow;
+using Elsa.Activities;
+using Elsa.Activities.ControlFlow.Activities;
 using Elsa.Activities.Email.Activities;
 using Elsa.Activities.Http.Activities;
-using Elsa.Activities.Primitives;
 using Elsa.Activities.Timers.Activities;
-using Elsa.Activities.Workflows;
+using Elsa.Activities.Workflows.Activities;
 using Elsa.Expressions;
+using Elsa.Scripting.JavaScript;
 using Elsa.Services;
 using Elsa.Services.Models;
 
@@ -19,7 +20,7 @@ namespace Elsa.Guides.DocumentApproval.WebApp
         public void Build(IWorkflowBuilder builder)
         {
             builder
-                .StartWith<HttpRequestEvent>(
+                .StartWith<ReceiveHttpRequest>(
                     x =>
                     {
                         x.Method = HttpMethod.Post.Method;
@@ -47,7 +48,7 @@ namespace Elsa.Guides.DocumentApproval.WebApp
                         );
                     }
                 )
-                .Then<HttpResponseAction>(
+                .Then<WriteHttpResponse>(
                     x =>
                     {
                         x.Content = new LiteralExpression(
@@ -83,7 +84,7 @@ namespace Elsa.Guides.DocumentApproval.WebApp
                             .When("Remind")
                             .Then<TimerEvent>(
                                 x => x.TimeoutExpression = new LiteralExpression<TimeSpan>("00:00:10"),
-                                id: "RemindTimer"
+                                name: "RemindTimer"
                             )
                             .Then<IfElse>(
                                 x => x.ConditionExpression = new JavaScriptExpression<bool>("!!Approved"),
@@ -111,7 +112,7 @@ namespace Elsa.Guides.DocumentApproval.WebApp
                             );
                     }
                 )
-                .Then<Join>(x => x.Mode = Join.JoinMode.WaitAny, id: "Join")
+                .Then<Join>(x => x.Mode = Join.JoinMode.WaitAny, name: "Join")
                 .Then<SetVariable>(
                     x =>
                     {

@@ -2,12 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Elsa.Activities.Http" Version="1.0.0.16-beta3" />
-        <PackageReference Include="Elsa.Core" Version="1.0.0.16-beta3" />
+        <PackageReference Include="Elsa" Version="1.0.1.127" />
     </ItemGroup>
 
     <ItemGroup>

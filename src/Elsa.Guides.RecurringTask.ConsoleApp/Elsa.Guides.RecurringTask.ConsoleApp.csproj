@@ -6,9 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Elsa.Activities.Console" Version="1.0.0.67-rc1" />
-      <PackageReference Include="Elsa.Activities.Timers" Version="1.0.0.67-rc1" />
-      <PackageReference Include="Elsa.Core" Version="1.0.0.67-rc1" />
+      <PackageReference Include="Elsa" Version="1.0.1.127" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
     </ItemGroup>
 

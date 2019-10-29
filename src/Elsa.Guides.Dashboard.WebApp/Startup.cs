@@ -18,30 +18,22 @@ namespace Elsa.Guides.Dashboard.WebApp
         {
             Configuration = configuration;
         }
-        
+
         private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+
             services
                 // Add services used for the workflows runtime.
-                .AddWorkflows()
+                .AddElsa(elsa => elsa.AddEntityFrameworkStores(ef => ef.UseSqlite(Configuration.GetConnectionString("Sqlite"))))
                 .AddHttpActivities(options => options.Bind(Configuration.GetSection("Elsa:Http")))
                 .AddEmailActivities(options => options.Bind(Configuration.GetSection("Elsa:Smtp")))
                 .AddTimerActivities(options => options.Bind(Configuration.GetSection("Elsa:Timers")))
-                
+
                 // Add services used for the workflows dashboard.
-                .AddElsaDashboard(options => options.DiscoverActivities())
-                
-                // Add services used for persistence. 
-                .AddEntityFrameworkCoreWorkflowDefinitionStore()
-                .AddEntityFrameworkCoreWorkflowInstanceStore()
-                .AddEntityFrameworkCore(
-                    options => options
-                        .UseSqlite(Configuration.GetConnectionString("Sqlite"))
-                );
+                .AddElsaDashboard();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

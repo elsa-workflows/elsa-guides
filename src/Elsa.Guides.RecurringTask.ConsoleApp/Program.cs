@@ -22,11 +22,6 @@ namespace Elsa.Guides.RecurringTask.ConsoleApp
 
             using (host)
             {
-                var services = host.Services;
-                var registry = services.GetService<IWorkflowRegistry>();
-                
-                registry.RegisterWorkflow<RecurringTaskWorkflow>();
-                
                 await host.StartAsync();
                 await host.WaitForShutdownAsync();
             }
@@ -35,9 +30,10 @@ namespace Elsa.Guides.RecurringTask.ConsoleApp
         private static void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddWorkflows()
+                .AddElsa()
                 .AddConsoleActivities()
-                .AddTimerActivities(options => options.Configure(x => x.SweepInterval = Period.FromSeconds(1)));
+                .AddTimerActivities(options => options.Configure(x => x.SweepInterval = Period.FromSeconds(1)))
+                .AddWorkflow<RecurringTaskWorkflow>();
         }
     }
 }
