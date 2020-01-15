@@ -6,8 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Elsa" Version="1.0.1.128" />
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
+      <PackageReference Include="Elsa" Version="1.1.5.19" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
     </ItemGroup>
 
     <ItemGroup>

@@ -5,9 +5,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Elsa" Version="1.0.1.128" />
-      <PackageReference Include="Elsa.Dashboard" Version="1.0.1.128" />
-      <PackageReference Include="Elsa.Persistence.EntityFrameworkCore" Version="1.0.1.128" />
+      <PackageReference Include="Elsa" Version="1.1.5.19" />
+      <PackageReference Include="Elsa.Dashboard" Version="1.1.5.19" />
+      <PackageReference Include="Elsa.Persistence.EntityFrameworkCore" Version="1.1.5.19" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1" />
     </ItemGroup>
 
 </Project>

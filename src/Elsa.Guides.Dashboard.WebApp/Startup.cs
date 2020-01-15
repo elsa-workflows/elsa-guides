@@ -3,6 +3,7 @@ using Elsa.Activities.Http.Extensions;
 using Elsa.Activities.Timers.Extensions;
 using Elsa.Dashboard.Extensions;
 using Elsa.Extensions;
+using Elsa.Persistence.EntityFrameworkCore.DbContexts;
 using Elsa.Persistence.EntityFrameworkCore.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +28,7 @@ namespace Elsa.Guides.Dashboard.WebApp
 
             services
                 // Add services used for the workflows runtime.
-                .AddElsa(elsa => elsa.AddEntityFrameworkStores(ef => ef.UseSqlite(Configuration.GetConnectionString("Sqlite"))))
+                .AddElsa(elsa => elsa.AddEntityFrameworkStores<SqliteContext>(ef => ef.UseSqlite(Configuration.GetConnectionString("Sqlite"))))
                 .AddHttpActivities(options => options.Bind(Configuration.GetSection("Elsa:Http")))
                 .AddEmailActivities(options => options.Bind(Configuration.GetSection("Elsa:Smtp")))
                 .AddTimerActivities(options => options.Bind(Configuration.GetSection("Elsa:Timers")))
