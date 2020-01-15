@@ -32,7 +32,7 @@ namespace Elsa.Guides.RecurringTask.ConsoleApp
             services
                 .AddElsa()
                 .AddConsoleActivities()
-                .AddTimerActivities(options => options.Configure(x => x.SweepInterval = Period.FromSeconds(1)))
+                .AddTimerActivities(options => options.Configure(x => x.SweepInterval = Duration.FromSeconds(1)))
                 .AddWorkflow<RecurringTaskWorkflow>();
         }
     }
