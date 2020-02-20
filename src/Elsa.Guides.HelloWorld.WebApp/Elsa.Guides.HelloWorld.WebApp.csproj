@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Elsa" Version="1.2.0" />
+        <PackageReference Include="Elsa" Version="1.2.2.28" />
     </ItemGroup>
 
     <ItemGroup>

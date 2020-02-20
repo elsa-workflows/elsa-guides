@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+    
+    smtp4dev:
+        image: rnwood/smtp4dev:linux-amd64-3.1.0-ci0856
+        ports:
+            - "3000:80"
+            - "2525:25"

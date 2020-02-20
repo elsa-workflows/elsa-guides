@@ -1,0 +1,13 @@
+﻿# Submit a document.
+POST http://localhost:5000/documents
+Content-Type: application/json
+
+{
+  "Id": "document-1",
+  "Author": {
+    "Name": "Jerry",
+    "Email": "jerry@acme.com"
+  }
+}
+
+###
