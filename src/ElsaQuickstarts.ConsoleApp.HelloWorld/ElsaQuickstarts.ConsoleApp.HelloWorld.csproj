@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa" Version="2.0.0-rc1.21" />
+    <PackageReference Include="Elsa" Version="2.0.0-rc3.151" />
   </ItemGroup>
 
 </Project>

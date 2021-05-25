@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa" Version="2.0.0-rc1.21" />
-    <PackageReference Include="Elsa.Activities.Email" Version="2.0.0-rc1.21" />
-    <PackageReference Include="Elsa.Activities.Http" Version="2.0.0-rc1.21" />
-    <PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.0.0-rc1.21" />
-    <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.0.0-rc1.21" />
-    <PackageReference Include="Elsa.Server.Api" Version="2.0.0-rc1.21" />
+    <PackageReference Include="Elsa" Version="2.0.0-rc3.151" />
+    <PackageReference Include="Elsa.Activities.Email" Version="2.0.0-rc3.151" />
+    <PackageReference Include="Elsa.Activities.Http" Version="2.0.0-rc3.151" />
+    <PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.0.0-rc3.151" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.0.0-rc3.151" />
+    <PackageReference Include="Elsa.Server.Api" Version="2.0.0-rc3.151" />
   </ItemGroup>
 
 </Project>
