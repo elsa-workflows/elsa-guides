@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElsaGuides.WorkflowContexts.Web", "ElsaGuides.WorkflowContexts.Web\ElsaGuides.WorkflowContexts.Web.csproj", "{7ED92C8D-7581-445F-8AF2-C2C14854BBFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ED92C8D-7581-445F-8AF2-C2C14854BBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED92C8D-7581-445F-8AF2-C2C14854BBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED92C8D-7581-445F-8AF2-C2C14854BBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED92C8D-7581-445F-8AF2-C2C14854BBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
