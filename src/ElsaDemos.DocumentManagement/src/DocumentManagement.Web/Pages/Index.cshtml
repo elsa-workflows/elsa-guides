@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h1 class="display-4">Upload Document</h1>
+    <p>Upload a file for processing</p>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="DocumentTypeId" class="form-label">Document Type</label>
+        <select asp-for="DocumentTypeId" asp-items="Model.DocumentTypes" class="form-select"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="FileUpload" class="form-label">File</label>
+        <input asp-for="FileUpload" type="file" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
