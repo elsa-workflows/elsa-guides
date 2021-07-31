@@ -6,8 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.1.1.463" />
-        <PackageReference Include="Elsa.Server.Api" Version="2.1.1.463" />
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.2.0-preview.548" />
+        <PackageReference Include="Elsa.Server.Api" Version="2.2.0-preview.548" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.24" />
         <PackageReference Include="Hangfire.SQLite" Version="1.4.2" />
         <PackageReference Include="Storage.Net" Version="9.2.7" />
