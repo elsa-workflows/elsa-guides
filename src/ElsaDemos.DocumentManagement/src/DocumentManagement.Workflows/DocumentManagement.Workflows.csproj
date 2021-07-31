@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Elsa" Version="2.2.0-preview.548" />
+        <PackageReference Include="Elsa.Activities.Email" Version="2.2.0-preview.548" />
+        <PackageReference Include="Elsa.Activities.Http" Version="2.2.0-preview.548" />
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.2.0-preview.548" />
+        <PackageReference Include="Elsa.Server.Hangfire" Version="2.2.0-preview.548" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    </ItemGroup>
+
+    <!--    <ItemGroup>-->
+    <!--      <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\activities\Elsa.Activities.Email\Elsa.Activities.Email.csproj" />-->
+    <!--      <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\activities\Elsa.Activities.Http\Elsa.Activities.Http.csproj" />-->
+    <!--      <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\core\Elsa\Elsa.csproj" />-->
+    <!--      <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Core\Elsa.Persistence.EntityFramework.Core.csproj" />-->
+    <!--      <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\server\Elsa.Server.Hangfire\Elsa.Server.Hangfire.csproj" />-->
+    <!--    </ItemGroup>-->
+    
+    <ItemGroup>
+        <ProjectReference Include="..\DocumentManagement.Core\DocumentManagement.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Workflows\change-request-workflow.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Workflows\hello-world.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Workflows\identity-verification-workflow.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Workflows\leave-request-workflow.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>

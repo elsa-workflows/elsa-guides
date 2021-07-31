@@ -1,0 +1,11 @@
+﻿@page "/file-received/{DocumentId}"
+@model FileReceivedModel
+@{
+    ViewData["Title"] = "Document Received";
+}
+
+<div>
+    <h1 class="display-4">Document Received</h1>
+    <p>We received your file. Thank you!</p>
+    <p>Document ID: @Model.DocumentId</p>
+</div>
