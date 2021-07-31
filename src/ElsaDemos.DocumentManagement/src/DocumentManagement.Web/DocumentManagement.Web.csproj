@@ -6,28 +6,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.1.1.463" />
+        <PackageReference Include="Elsa.Server.Api" Version="2.1.1.463" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.24" />
         <PackageReference Include="Hangfire.SQLite" Version="1.4.2" />
         <PackageReference Include="Storage.Net" Version="9.2.7" />
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Sqlite\Elsa.Persistence.EntityFramework.Sqlite.csproj" />
-        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\server\Elsa.Server.Api\Elsa.Server.Api.csproj" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Sqlite\Elsa.Persistence.EntityFramework.Sqlite.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\server\Elsa.Server.Api\Elsa.Server.Api.csproj" />-->
+<!--    </ItemGroup>-->
 
     <ItemGroup>
         <ProjectReference Include="..\DocumentManagement.Workflows\DocumentManagement.Workflows.csproj" />
         <ProjectReference Include="..\DocumentManagement.Core\DocumentManagement.Core.csproj" />
         <ProjectReference Include="..\DocumentManagement.Persistence\DocumentManagement.Persistence.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="App_Data\Uploads" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <_ContentIncludedByDefault Remove="Workflows\hello-world.json" />
     </ItemGroup>
 
 </Project>

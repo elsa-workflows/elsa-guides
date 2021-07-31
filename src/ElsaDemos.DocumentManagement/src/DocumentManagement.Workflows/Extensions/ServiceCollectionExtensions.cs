@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using DocumentManagement.Core.Options;
 using DocumentManagement.Workflows.Activities;
 using DocumentManagement.Workflows.Handlers;
@@ -49,9 +48,6 @@ namespace DocumentManagement.Workflows.Extensions
                     // Configure HTTP activities.
                     .AddHttpActivities()
 
-                    // Use Quartz timer activities.
-                    .AddQuartzTemporalActivities()
-                
                     // Add custom activities.
                     .AddActivitiesFrom<ArchiveDocument>()
                 );
