@@ -1,5 +1,4 @@
-﻿using System;
-using DocumentManagement.Core.Models;
+﻿using DocumentManagement.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DocumentManagement.Persistence

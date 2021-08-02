@@ -1,14 +1,14 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Elsa.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
-namespace DocumentManagement.Persistence.StartupTasks
+namespace DocumentManagement.Persistence.HostedServices
 {
     /// <summary>
     /// Executes EF Core migrations.
     /// </summary>
-    public class RunMigrations : IStartupTask
+    public class RunMigrations : IHostedService
     {
         private readonly IDbContextFactory<DocumentDbContext> _dbContextFactory;
 
@@ -17,13 +17,13 @@ namespace DocumentManagement.Persistence.StartupTasks
             _dbContextFactory = dbContextFactoryFactory;
         }
 
-        public int Order => 0;
-        
-        public async Task ExecuteAsync(CancellationToken cancellationToken = default)
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
             await using var dbContext = _dbContextFactory.CreateDbContext();
             await dbContext.Database.MigrateAsync(cancellationToken);
             await dbContext.DisposeAsync();
         }
+
+        public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
     }
 }

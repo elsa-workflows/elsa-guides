@@ -55,8 +55,10 @@ namespace DocumentManagement.Workflows.Extensions
             // Register custom type definition provider for JS intellisense.
             services.AddJavaScriptTypeDefinitionProvider<CustomTypeDefinitionProvider>();
 
-            // Configure Storage for BlobStorageWorkflowProvider with a directory on disk from where to load workflow definition JSON files from the local "Workflows" folder.
+            // Get directory path to current assembly.
             var currentAssemblyPath = Path.GetDirectoryName(typeof(ServiceCollectionExtensions).Assembly.Location);
+
+            // Configure Storage for BlobStorageWorkflowProvider with a directory on disk from where to load workflow definition JSON files from the local "Workflows" folder.
             services.Configure<BlobStorageWorkflowProviderOptions>(options => options.BlobStorageFactory = () => StorageFactory.Blobs.DirectoryFiles(Path.Combine(currentAssemblyPath, "Workflows")));
 
             return services;

@@ -22,8 +22,8 @@ namespace DocumentManagement.Web.Pages
 
         public async Task<IActionResult?> OnGetAsync(CancellationToken cancellationToken)
         {
-             Document = await _documentStore.GetAsync(DocumentId, cancellationToken);
-            
+            Document = await _documentStore.GetAsync(DocumentId, cancellationToken);
+
             return Document == null ? NotFound() : default(IActionResult?);
         }
     }

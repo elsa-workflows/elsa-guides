@@ -46,7 +46,10 @@ namespace DocumentManagement.Web
             AddWorkflowServices(services, dbConnectionString);
 
             // Domain services.
-            AddDomainServices(services, dbConnectionString);
+            AddDomainServices(services);
+            
+            // Persistence.
+            AddPersistenceServices(services, dbConnectionString);
 
             // Allow arbitrary client browser apps to access the API for demo purposes only.
             // In a production environment, make sure to allow only origins you trust.
@@ -114,14 +117,17 @@ namespace DocumentManagement.Web
             services.AddElsaApiEndpoints();
         }
 
-        private void AddDomainServices(IServiceCollection services, string dbConnectionString)
+        private void AddDomainServices(IServiceCollection services)
         {
-            services
-                .AddDomainServices()
-                .AddDomainPersistence(dbConnectionString);
+            services.AddDomainServices();
             
             // Configure Storage for DocumentStorage.
             services.Configure<DocumentStorageOptions>(options => options.BlobStorageFactory = () => StorageFactory.Blobs.DirectoryFiles(Path.Combine(Environment.ContentRootPath, "App_Data/Uploads")));
+        }
+        
+        private void AddPersistenceServices(IServiceCollection services, string dbConnectionString)
+        {
+            services.AddDomainPersistence(dbConnectionString);
         }
     }
 }

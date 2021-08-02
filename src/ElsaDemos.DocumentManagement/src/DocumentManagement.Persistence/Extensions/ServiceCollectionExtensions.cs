@@ -1,7 +1,6 @@
 ﻿using DocumentManagement.Core.Services;
+using DocumentManagement.Persistence.HostedServices;
 using DocumentManagement.Persistence.Services;
-using DocumentManagement.Persistence.StartupTasks;
-using Elsa.Runtime;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,7 +16,7 @@ namespace DocumentManagement.Persistence.Extensions
                 .AddPooledDbContextFactory<DocumentDbContext>(x => x.UseSqlite(connectionString, db => db.MigrationsAssembly(migrationsAssemblyName)))
                 .AddSingleton<IDocumentStore, EFCoreDocumentStore>()
                 .AddSingleton<IDocumentTypeStore, EFCoreDocumentTypeStore>()
-                .AddStartupTask<RunMigrations>();
+                .AddHostedService<RunMigrations>();
         }
     }
 }
