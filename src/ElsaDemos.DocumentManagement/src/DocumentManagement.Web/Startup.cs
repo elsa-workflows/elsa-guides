@@ -7,7 +7,6 @@ using Elsa;
 using Elsa.Activities.Email.Options;
 using Elsa.Activities.Http.Options;
 using Elsa.Persistence.EntityFramework.Sqlite;
-using Elsa.Server.Hangfire.Extensions;
 using Hangfire;
 using Hangfire.SQLite;
 using Microsoft.AspNetCore.Builder;
@@ -97,9 +96,6 @@ namespace DocumentManagement.Web
                 {
                     // Bind settings from configuration.
                     Configuration.GetSection("Hangfire").Bind(options);
-
-                    // Configure queues for Elsa workflow dispatchers.
-                    options.ConfigureForElsaDispatchers(sp);
                 });
         }
 

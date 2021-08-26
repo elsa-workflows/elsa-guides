@@ -10,7 +10,7 @@ using Elsa.Services.Models;
 
 namespace DocumentManagement.Workflows.Activities
 {
-    [Action(Category = "Document Management", Description = "Archives the specified document.")]
+    [Activity(Category = "Document Management", Description = "Archives the specified document.")]
     public class ArchiveDocument : Activity
     {
         private readonly IDocumentStore _documentStore;

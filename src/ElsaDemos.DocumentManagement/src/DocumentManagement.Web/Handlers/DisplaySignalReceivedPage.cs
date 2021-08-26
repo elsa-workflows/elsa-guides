@@ -1,10 +1,6 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Elsa.Activities.Http.Events;
-using Elsa.Persistence;
-using Elsa.Persistence.Specifications.WorkflowInstances;
-using Elsa.Services;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
@@ -16,26 +12,24 @@ namespace DocumentManagement.Web.Handlers
     public class DisplaySignalReceivedPage : INotificationHandler<HttpTriggeredSignal>
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IWorkflowInstanceStore _workflowInstanceStore;
-        private readonly IWorkflowRegistry _workflowRegistry;
 
-        public DisplaySignalReceivedPage(IHttpContextAccessor httpContextAccessor, IWorkflowInstanceStore workflowInstanceStore, IWorkflowRegistry workflowRegistry)
+        public DisplaySignalReceivedPage(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
-            _workflowInstanceStore = workflowInstanceStore;
-            _workflowRegistry = workflowRegistry;
         }
 
         public Task Handle(HttpTriggeredSignal notification, CancellationToken cancellationToken)
         {
             var affectedWorkflows = notification.AffectedWorkflows;
 
+            // Exit if no workflows were affected.
             if (affectedWorkflows.Count == 0)
                 return Task.CompletedTask;
 
             var signalName = notification.SignalModel.Name;
             var response = _httpContextAccessor.HttpContext!.Response;
 
+            // Redirect to the appropriate page.
             switch (signalName)
             {
                 case "Approve":

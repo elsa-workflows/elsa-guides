@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using DocumentManagement.Core.Events;
+using Elsa.Models;
 using Elsa.Services;
 using MediatR;
 using Open.Linq.AsyncExtensions;
@@ -31,7 +32,7 @@ namespace DocumentManagement.Workflows.Handlers
 
             // Dispatch each workflow. Each workflow will be correlated by Document ID.
             foreach (var workflowBlueprint in workflowBlueprints) 
-                await _workflowDispatcher.DispatchAsync(new ExecuteWorkflowDefinitionRequest(workflowBlueprint.Id, CorrelationId: document.Id), cancellationToken);
+                await _workflowDispatcher.DispatchAsync(new ExecuteWorkflowDefinitionRequest(workflowBlueprint.Id, CorrelationId: document.Id, Input: new WorkflowInput(document.Id)), cancellationToken);
         }
     }
 }

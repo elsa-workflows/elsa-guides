@@ -7,7 +7,6 @@ using DocumentManagement.Workflows.Scripting.JavaScript;
 using Elsa;
 using Elsa.Persistence.EntityFramework.Core.Extensions;
 using Elsa.Providers.Workflows;
-using Elsa.Server.Hangfire.Extensions;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,9 +37,6 @@ namespace DocumentManagement.Workflows.Extensions
                     
                     // Ue Console activities for testing & demo purposes.
                     .AddConsoleActivities()
-
-                    // Use Hangfire to dispatch workflows from.
-                    .UseHangfireDispatchers()
 
                     // Configure Email activities.
                     .AddEmailActivities()

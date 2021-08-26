@@ -24,8 +24,7 @@ namespace DocumentManagement.Workflows.Activities
             _documentStore = documentStore;
             _fileStorage = fileStorage;
         }
-
-
+        
         [ActivityInput(
             Label = "Document ID",
             Hint = "The ID of the document to load",

@@ -4,6 +4,7 @@
   "versionId": "88aabc87c1174d77a99f0046b6e3ebab",
   "name": "ChangeRequestWorkflow",
   "displayName": "Change Request Workflow",
+  "description": "A simple workflow that compresses the document, sends it as an email attachment and marks the document as Archived.",
   "version": 7,
   "variables": {
     "$id": "2",
