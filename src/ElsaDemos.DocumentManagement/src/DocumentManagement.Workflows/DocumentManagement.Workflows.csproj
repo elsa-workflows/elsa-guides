@@ -6,20 +6,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-<!--        <PackageReference Include="Elsa" Version="2.2.0-preview.548" />-->
-<!--        <PackageReference Include="Elsa.Activities.Email" Version="2.2.0-preview.548" />-->
-<!--        <PackageReference Include="Elsa.Activities.Http" Version="2.2.0-preview.548" />-->
-<!--        <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.2.0-preview.548" />-->
+        <PackageReference Include="Elsa" Version="2.3.0" />
+        <PackageReference Include="Elsa.Activities.Email" Version="2.3.0" />
+        <PackageReference Include="Elsa.Activities.Http" Version="2.3.0" />
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.3.0" />
         <PackageReference Include="Hangfire.Core" Version="1.7.24" />
         <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\..\..\elsa-core\src\activities\Elsa.Activities.Email\Elsa.Activities.Email.csproj" />
-        <ProjectReference Include="..\..\..\..\..\elsa-core\src\activities\Elsa.Activities.Http\Elsa.Activities.Http.csproj" />
-        <ProjectReference Include="..\..\..\..\..\elsa-core\src\core\Elsa\Elsa.csproj" />
-        <ProjectReference Include="..\..\..\..\..\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Core\Elsa.Persistence.EntityFramework.Core.csproj" />
+<!--        <ProjectReference Include="..\..\..\..\..\elsa-core\src\activities\Elsa.Activities.Email\Elsa.Activities.Email.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\elsa-core\src\activities\Elsa.Activities.Http\Elsa.Activities.Http.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\elsa-core\src\core\Elsa\Elsa.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Core\Elsa.Persistence.EntityFramework.Core.csproj" />-->
         <ProjectReference Include="..\DocumentManagement.Core\DocumentManagement.Core.csproj" />
     </ItemGroup>
 
