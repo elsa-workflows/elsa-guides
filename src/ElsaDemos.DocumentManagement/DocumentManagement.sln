@@ -15,28 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentManagement.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentManagement.Persistence", "src\DocumentManagement.Persistence\DocumentManagement.Persistence.csproj", "{4BFE6323-B46A-4B26-88B3-33C78A17C6D4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elsa", "elsa", "{2BEAB67F-AF67-4DB1-929A-FC6C678A633E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa", "..\..\..\elsa-core\src\core\Elsa\Elsa.csproj", "{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Abstractions", "..\..\..\elsa-core\src\core\Elsa.Abstractions\Elsa.Abstractions.csproj", "{11B7943E-4240-499F-9EE7-CD55A5BB72C8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Core", "..\..\..\elsa-core\src\core\Elsa.Core\Elsa.Core.csproj", "{5BD98276-EE6B-4CCF-91F2-544544FE79ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Activities.Http", "..\..\..\elsa-core\src\activities\Elsa.Activities.Http\Elsa.Activities.Http.csproj", "{81D8AA36-8C09-4C74-BB64-46143CF7D3FF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Activities.Email", "..\..\..\elsa-core\src\activities\Elsa.Activities.Email\Elsa.Activities.Email.csproj", "{53B33B7E-1269-495C-855B-D62F9EFDB282}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Persistence.EntityFramework.Core", "..\..\..\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Core\Elsa.Persistence.EntityFramework.Core.csproj", "{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Server.Api", "..\..\..\elsa-core\src\server\Elsa.Server.Api\Elsa.Server.Api.csproj", "{7C64C208-A278-4ADA-8A19-916348E4537C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Server.Hangfire", "..\..\..\elsa-core\src\server\Elsa.Server.Hangfire\Elsa.Server.Hangfire.csproj", "{A6C93208-5394-4C26-8BE0-56EB18E89192}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Persistence.EntityFramework.Sqlite", "..\..\..\elsa-core\src\persistence\Elsa.Persistence.EntityFramework\Elsa.Persistence.EntityFramework.Sqlite\Elsa.Persistence.EntityFramework.Sqlite.csproj", "{0CE6A183-860B-4A36-B731-74C32CD010C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Scripting.Liquid", "..\..\..\elsa-core\src\scripting\Elsa.Scripting.Liquid\Elsa.Scripting.Liquid.csproj", "{87649A28-B98B-486F-B865-AB472C4FC768}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,61 +37,11 @@ Global
 		{4BFE6323-B46A-4B26-88B3-33C78A17C6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BFE6323-B46A-4B26-88B3-33C78A17C6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BFE6323-B46A-4B26-88B3-33C78A17C6D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11B7943E-4240-499F-9EE7-CD55A5BB72C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11B7943E-4240-499F-9EE7-CD55A5BB72C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11B7943E-4240-499F-9EE7-CD55A5BB72C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11B7943E-4240-499F-9EE7-CD55A5BB72C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BD98276-EE6B-4CCF-91F2-544544FE79ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BD98276-EE6B-4CCF-91F2-544544FE79ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BD98276-EE6B-4CCF-91F2-544544FE79ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BD98276-EE6B-4CCF-91F2-544544FE79ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81D8AA36-8C09-4C74-BB64-46143CF7D3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81D8AA36-8C09-4C74-BB64-46143CF7D3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81D8AA36-8C09-4C74-BB64-46143CF7D3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81D8AA36-8C09-4C74-BB64-46143CF7D3FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53B33B7E-1269-495C-855B-D62F9EFDB282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53B33B7E-1269-495C-855B-D62F9EFDB282}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53B33B7E-1269-495C-855B-D62F9EFDB282}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53B33B7E-1269-495C-855B-D62F9EFDB282}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C64C208-A278-4ADA-8A19-916348E4537C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C64C208-A278-4ADA-8A19-916348E4537C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C64C208-A278-4ADA-8A19-916348E4537C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C64C208-A278-4ADA-8A19-916348E4537C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6C93208-5394-4C26-8BE0-56EB18E89192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6C93208-5394-4C26-8BE0-56EB18E89192}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6C93208-5394-4C26-8BE0-56EB18E89192}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6C93208-5394-4C26-8BE0-56EB18E89192}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CE6A183-860B-4A36-B731-74C32CD010C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CE6A183-860B-4A36-B731-74C32CD010C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CE6A183-860B-4A36-B731-74C32CD010C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CE6A183-860B-4A36-B731-74C32CD010C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87649A28-B98B-486F-B865-AB472C4FC768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87649A28-B98B-486F-B865-AB472C4FC768}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87649A28-B98B-486F-B865-AB472C4FC768}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87649A28-B98B-486F-B865-AB472C4FC768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{244A392D-E6ED-4908-9C29-DB88ECFCD8A1} = {D5EA47C9-8141-4EA2-A05E-0DD9D3CCC2DD}
 		{61AB7803-A084-404E-AB5C-90ED9CE50C43} = {D5EA47C9-8141-4EA2-A05E-0DD9D3CCC2DD}
 		{136842AB-B232-40ED-9B95-A229BE443AB8} = {D5EA47C9-8141-4EA2-A05E-0DD9D3CCC2DD}
 		{4BFE6323-B46A-4B26-88B3-33C78A17C6D4} = {D5EA47C9-8141-4EA2-A05E-0DD9D3CCC2DD}
-		{06E0A1E8-D795-4955-A8E0-E263FC3F7E4A} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{11B7943E-4240-499F-9EE7-CD55A5BB72C8} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{5BD98276-EE6B-4CCF-91F2-544544FE79ED} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{81D8AA36-8C09-4C74-BB64-46143CF7D3FF} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{53B33B7E-1269-495C-855B-D62F9EFDB282} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{83BFCCBF-5479-4F8C-9465-2EB0B3D2CCFC} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{7C64C208-A278-4ADA-8A19-916348E4537C} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{A6C93208-5394-4C26-8BE0-56EB18E89192} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{0CE6A183-860B-4A36-B731-74C32CD010C9} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
-		{87649A28-B98B-486F-B865-AB472C4FC768} = {2BEAB67F-AF67-4DB1-929A-FC6C678A633E}
 	EndGlobalSection
 EndGlobal
