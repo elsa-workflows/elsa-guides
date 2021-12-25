@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Elsa" Version="2.3.0" />
-        <PackageReference Include="Elsa.Activities.Email" Version="2.3.0" />
-        <PackageReference Include="Elsa.Activities.Http" Version="2.3.0" />
-        <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.3.0" />
+        <PackageReference Include="Elsa" Version="2.4.0-preview.493" />
+        <PackageReference Include="Elsa.Activities.Email" Version="2.4.0-preview.493" />
+        <PackageReference Include="Elsa.Activities.Http" Version="2.4.0-preview.493" />
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.4.0-preview.493" />
         <PackageReference Include="Hangfire.Core" Version="1.7.24" />
         <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />

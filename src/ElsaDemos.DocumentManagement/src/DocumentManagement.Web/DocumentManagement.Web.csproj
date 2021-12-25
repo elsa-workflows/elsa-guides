@@ -6,17 +6,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.3.0"/>
-        <PackageReference Include="Elsa.Server.Api" Version="2.3.0"/>
-        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.24"/>
-        <PackageReference Include="Hangfire.SQLite" Version="1.4.2"/>
-        <PackageReference Include="Storage.Net" Version="9.3.0"/>
+        <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.4.0-preview.493" />
+        <PackageReference Include="Elsa.Server.Api" Version="2.4.0-preview.493" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.24" />
+        <PackageReference Include="Hangfire.SQLite" Version="1.4.2" />
+        <PackageReference Include="Storage.Net" Version="9.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DocumentManagement.Workflows\DocumentManagement.Workflows.csproj"/>
-        <ProjectReference Include="..\DocumentManagement.Core\DocumentManagement.Core.csproj"/>
-        <ProjectReference Include="..\DocumentManagement.Persistence\DocumentManagement.Persistence.csproj"/>
+        <ProjectReference Include="..\DocumentManagement.Workflows\DocumentManagement.Workflows.csproj" />
+        <ProjectReference Include="..\DocumentManagement.Core\DocumentManagement.Core.csproj" />
+        <ProjectReference Include="..\DocumentManagement.Persistence\DocumentManagement.Persistence.csproj" />
     </ItemGroup>
 
 </Project>
