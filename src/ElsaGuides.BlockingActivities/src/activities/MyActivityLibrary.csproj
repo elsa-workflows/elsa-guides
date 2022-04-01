@@ -5,11 +5,17 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\core\Elsa.Core\Elsa.Core.csproj" />
-        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\scripting\Elsa.Scripting.JavaScript\Elsa.Scripting.JavaScript.csproj" />
-        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\scripting\Elsa.Scripting.Liquid\Elsa.Scripting.Liquid.csproj" />
+      <PackageReference Include="Elsa.Core" Version="2.6.0" />
+      <PackageReference Include="Elsa.Scripting.JavaScript" Version="2.6.0" />
+      <PackageReference Include="Elsa.Scripting.Liquid" Version="2.6.0" />
     </ItemGroup>
+    
+<!--    <ItemGroup>-->
+<!--        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\core\Elsa.Core\Elsa.Core.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\scripting\Elsa.Scripting.JavaScript\Elsa.Scripting.JavaScript.csproj" />-->
+<!--        <ProjectReference Include="..\..\..\..\..\core\elsa-core\src\scripting\Elsa.Scripting.Liquid\Elsa.Scripting.Liquid.csproj" />-->
+<!--    </ItemGroup>-->
 
 </Project>
