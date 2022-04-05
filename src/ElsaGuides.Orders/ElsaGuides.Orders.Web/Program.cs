@@ -24,7 +24,8 @@ services
             options.BaseUrl = new Uri(builder.Configuration["ASPNETCORE_URLS"]);
         })
         .AddJavaScriptActivities()
-        .AddActivity<CreateOrder>()
+        .AddQuartzTemporalActivities()
+        .AddActivitiesFrom<CreateOrder>()
     );
 
 services.AddWorkflowContextProvider<OrderContextProvider>();

@@ -1,0 +1,248 @@
+{
+  "$id": "1",
+  "definitionId": "f25a2ff610cf44c9b3bac8889750061d",
+  "versionId": "17fdc9e0fae34e47bfd6e045f58bd11d",
+  "name": "Traffic Light State Machine",
+  "version": 2,
+  "variables": {
+    "$id": "2",
+    "data": {}
+  },
+  "customAttributes": {
+    "$id": "3",
+    "data": {}
+  },
+  "isSingleton": true,
+  "persistenceBehavior": "WorkflowBurst",
+  "deleteCompletedInstances": false,
+  "isPublished": true,
+  "isLatest": true,
+  "activities": [
+    {
+      "$id": "4",
+      "activityId": "82c8fda7-09ff-4a85-a2bc-5f85e4b93eba",
+      "type": "State",
+      "displayName": "State",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "5",
+          "name": "StateName",
+          "expressions": {
+            "$id": "6",
+            "Literal": "Red"
+          }
+        },
+        {
+          "$id": "7",
+          "name": "Transitions",
+          "expressions": {
+            "$id": "8",
+            "Json": "[\"Green\"]"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "9",
+      "activityId": "29d5aa7b-1e44-40b2-8c39-44957dab88c7",
+      "type": "State",
+      "displayName": "State",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "10",
+          "name": "StateName",
+          "expressions": {
+            "$id": "11",
+            "Literal": "Green"
+          }
+        },
+        {
+          "$id": "12",
+          "name": "Transitions",
+          "expressions": {
+            "$id": "13",
+            "Json": "[\"Yellow\"]"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "14",
+      "activityId": "a652e875-ad03-4a4a-9703-1953fcc7a3ff",
+      "type": "State",
+      "displayName": "State",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "15",
+          "name": "StateName",
+          "expressions": {
+            "$id": "16",
+            "Literal": "Yellow"
+          }
+        },
+        {
+          "$id": "17",
+          "name": "Transitions",
+          "expressions": {
+            "$id": "18",
+            "Json": "[\"Red\"]"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "19",
+      "activityId": "1c6e63b8-2738-4822-bbca-a921d4141dbc",
+      "type": "Timer",
+      "displayName": "Wait 5 Seconds",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "20",
+          "name": "Timeout",
+          "syntax": "JavaScript",
+          "expressions": {
+            "$id": "21",
+            "JavaScript": "Duration.FromSeconds(5)"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "22",
+      "activityId": "c57f9a55-28d3-4627-8d01-d0595483d985",
+      "type": "Timer",
+      "displayName": "Wait 60 Seconds",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "23",
+          "name": "Timeout",
+          "syntax": "JavaScript",
+          "expressions": {
+            "$id": "24",
+            "JavaScript": "Duration.FromSeconds(60)"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "25",
+      "activityId": "652b3988-882a-40a6-acbe-e85c8112fc87",
+      "type": "State",
+      "displayName": "State",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "26",
+          "name": "StateName",
+          "expressions": {
+            "$id": "27",
+            "Literal": "Offline"
+          }
+        },
+        {
+          "$id": "28",
+          "name": "Transitions",
+          "expressions": {
+            "$id": "29",
+            "Json": "[\"Red\"]"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    },
+    {
+      "$id": "30",
+      "activityId": "4ed1ffde-7066-45e6-90e1-4847686ba585",
+      "type": "Timer",
+      "displayName": "Wait 5 Seconds",
+      "persistWorkflow": false,
+      "loadWorkflowContext": false,
+      "saveWorkflowContext": false,
+      "properties": [
+        {
+          "$id": "31",
+          "name": "Timeout",
+          "syntax": "JavaScript",
+          "expressions": {
+            "$id": "32",
+            "JavaScript": "Duration.FromSeconds(5)"
+          }
+        }
+      ],
+      "propertyStorageProviders": {}
+    }
+  ],
+  "connections": [
+    {
+      "$id": "33",
+      "sourceActivityId": "82c8fda7-09ff-4a85-a2bc-5f85e4b93eba",
+      "targetActivityId": "1c6e63b8-2738-4822-bbca-a921d4141dbc",
+      "outcome": "Green"
+    },
+    {
+      "$id": "34",
+      "sourceActivityId": "1c6e63b8-2738-4822-bbca-a921d4141dbc",
+      "targetActivityId": "29d5aa7b-1e44-40b2-8c39-44957dab88c7",
+      "outcome": "Done"
+    },
+    {
+      "$id": "35",
+      "sourceActivityId": "29d5aa7b-1e44-40b2-8c39-44957dab88c7",
+      "targetActivityId": "c57f9a55-28d3-4627-8d01-d0595483d985",
+      "outcome": "Yellow"
+    },
+    {
+      "$id": "36",
+      "sourceActivityId": "c57f9a55-28d3-4627-8d01-d0595483d985",
+      "targetActivityId": "a652e875-ad03-4a4a-9703-1953fcc7a3ff",
+      "outcome": "Done"
+    },
+    {
+      "$id": "37",
+      "sourceActivityId": "652b3988-882a-40a6-acbe-e85c8112fc87",
+      "targetActivityId": "82c8fda7-09ff-4a85-a2bc-5f85e4b93eba",
+      "outcome": "Done"
+    },
+    {
+      "$id": "38",
+      "sourceActivityId": "652b3988-882a-40a6-acbe-e85c8112fc87",
+      "targetActivityId": "82c8fda7-09ff-4a85-a2bc-5f85e4b93eba",
+      "outcome": "Red"
+    },
+    {
+      "$id": "39",
+      "sourceActivityId": "a652e875-ad03-4a4a-9703-1953fcc7a3ff",
+      "targetActivityId": "4ed1ffde-7066-45e6-90e1-4847686ba585",
+      "outcome": "Red"
+    },
+    {
+      "$id": "40",
+      "sourceActivityId": "4ed1ffde-7066-45e6-90e1-4847686ba585",
+      "targetActivityId": "82c8fda7-09ff-4a85-a2bc-5f85e4b93eba",
+      "outcome": "Done"
+    }
+  ],
+  "id": "17fdc9e0fae34e47bfd6e045f58bd11d"
+}
