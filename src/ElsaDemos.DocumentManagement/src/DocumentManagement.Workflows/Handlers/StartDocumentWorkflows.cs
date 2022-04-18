@@ -28,7 +28,7 @@ namespace DocumentManagement.Workflows.Handlers
             var documentTypeId = document.DocumentTypeId;
             
             // Get all workflow blueprints tagged with the received document type ID.
-            var workflowBlueprints = await _workflowRegistry.FindManyAsync(x => x.IsPublished && x.Tag == documentTypeId, cancellationToken).ToList();
+            var workflowBlueprints = await _workflowRegistry.FindManyByTagAsync(documentTypeId, VersionOptions.Published, cancellationToken: cancellationToken).ToList();
 
             // Dispatch each workflow. Each workflow will be correlated by Document ID.
             foreach (var workflowBlueprint in workflowBlueprints) 
