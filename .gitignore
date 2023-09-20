@@ -334,3 +334,4 @@ App_Data/
 *.db
 *.db-shm
 *.db-wal
+.DS_Store
