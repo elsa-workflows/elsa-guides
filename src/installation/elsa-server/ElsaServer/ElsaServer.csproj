@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elsa" Version="3.0.0-preview.804" />
+    <PackageReference Include="Elsa.Http" Version="3.0.0-preview.804" />
+    <PackageReference Include="Elsa.Identity" Version="3.0.0-preview.804" />
+    <PackageReference Include="Elsa.Workflows.Api" Version="3.0.0-preview.804" />
+  </ItemGroup>
+  
+</Project>
