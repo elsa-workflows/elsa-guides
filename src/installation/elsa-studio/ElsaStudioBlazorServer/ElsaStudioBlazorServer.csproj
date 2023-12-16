@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa.Studio" Version="3.0.0-preview.96" />
-    <PackageReference Include="Elsa.Studio.Core.BlazorServer" Version="3.0.0-preview.96" />
-    <PackageReference Include="Elsa.Studio.Login.BlazorServer" Version="3.0.0-preview.96" />
+    <PackageReference Include="Elsa.Studio" Version="3.0.0-preview.165" />
+    <PackageReference Include="Elsa.Studio.Core.BlazorServer" Version="3.0.0-preview.165" />
+    <PackageReference Include="Elsa.Studio.Login.BlazorServer" Version="3.0.0-preview.165" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\_Host.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Index.razor" />
   </ItemGroup>
 
 </Project>
