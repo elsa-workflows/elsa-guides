@@ -6,9 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <ItemGroup><!--      <PackageReference Include="Elsa.Api.Client" Version="3.0.0-preview.932" />-->
-    
-      <ProjectReference Include="..\..\..\..\..\..\elsa-core\v3\src\clients\Elsa.Api.Client\Elsa.Api.Client.csproj" />
+    <ItemGroup>
+      <PackageReference Include="Elsa.Api.Client" Version="3.0.0-preview.934" />
     </ItemGroup>
 
 </Project>

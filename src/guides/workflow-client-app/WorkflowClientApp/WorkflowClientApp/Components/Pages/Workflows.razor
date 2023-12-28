@@ -1,8 +1,12 @@
 ﻿@page "/workflows"
+@rendermode InteractiveServer
 @using Elsa.Api.Client.Resources.WorkflowDefinitions.Models
 @using Elsa.Api.Client.Resources.WorkflowDefinitions.Contracts
+@using Elsa.Api.Client.Resources.WorkflowDefinitions.Requests
 @using Elsa.Api.Client.Resources.WorkflowDefinitions.Responses
 @using Elsa.Api.Client.Shared.Models
+@using System.Net
+@using Elsa.Api.Client.Resources.WorkflowInstances.Models
 @attribute [StreamRendering]
 
 <PageTitle>Workflows</PageTitle>
@@ -10,6 +14,13 @@
 <h1>Workflows</h1>
 
 <p>This component demonstrates interacting with the workflow server.</p>
+
+@if (!string.IsNullOrEmpty(_message))
+{
+    <code>
+        @_message
+    </code>
+}
 
 @if (_workflowDefinitions == null)
 {
@@ -36,7 +47,7 @@ else
                 <td>@definition.Name</td>
                 <td>@definition.Description</td>
                 <td>
-                    <button>Run</button>
+                    <button @onclick="@(() => OnRunClick(definition))">Run</button>
                 </td>
             </tr>
         }
@@ -47,9 +58,29 @@ else
 @code {
     [Inject] private IWorkflowDefinitionsApi WorkflowDefinitionsApi { get; set; } = default!;
     private PagedListResponse<WorkflowDefinitionSummary>? _workflowDefinitions;
+    private string? _message;
 
     protected override async Task OnInitializedAsync()
     {
         _workflowDefinitions = await WorkflowDefinitionsApi.ListAsync(new ListWorkflowDefinitionsRequest(), VersionOptions.Published);
     }
+    
+    private async Task OnRunClick(WorkflowDefinitionSummary definition)
+    {
+        var response = await WorkflowDefinitionsApi.ExecuteAsync(definition.DefinitionId, new ExecuteWorkflowDefinitionRequest
+        {
+            VersionOptions = VersionOptions.Published
+        });
+
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            var responseText = await response.Content.ReadAsStringAsync();
+            _message = responseText;
+        }
+        else
+        {
+            _message = $"Error starting workflow: {response.StatusCode}";
+        }
+    }
+
 }
