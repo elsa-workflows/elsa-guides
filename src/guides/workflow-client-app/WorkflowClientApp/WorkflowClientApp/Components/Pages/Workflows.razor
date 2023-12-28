@@ -1,0 +1,55 @@
+﻿@page "/workflows"
+@using Elsa.Api.Client.Resources.WorkflowDefinitions.Models
+@using Elsa.Api.Client.Resources.WorkflowDefinitions.Contracts
+@using Elsa.Api.Client.Resources.WorkflowDefinitions.Responses
+@using Elsa.Api.Client.Shared.Models
+@attribute [StreamRendering]
+
+<PageTitle>Workflows</PageTitle>
+
+<h1>Workflows</h1>
+
+<p>This component demonstrates interacting with the workflow server.</p>
+
+@if (_workflowDefinitions == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Definition ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var definition in _workflowDefinitions.Items)
+        {
+            <tr>
+                <td>@definition.DefinitionId</td>
+                <td>@definition.Name</td>
+                <td>@definition.Description</td>
+                <td>
+                    <button>Run</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Inject] private IWorkflowDefinitionsApi WorkflowDefinitionsApi { get; set; } = default!;
+    private PagedListResponse<WorkflowDefinitionSummary>? _workflowDefinitions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _workflowDefinitions = await WorkflowDefinitionsApi.ListAsync(new ListWorkflowDefinitionsRequest(), VersionOptions.Published);
+    }
+}

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowClientApp", "WorkflowClientApp\WorkflowClientApp.csproj", "{5B4C1FF4-195D-4E48-BE24-BD51373C0C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elsa.Api.Client", "..\..\..\..\..\elsa-core\v3\src\clients\Elsa.Api.Client\Elsa.Api.Client.csproj", "{34220A75-C902-4EE7-BA2D-97FE96D87832}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B4C1FF4-195D-4E48-BE24-BD51373C0C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B4C1FF4-195D-4E48-BE24-BD51373C0C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B4C1FF4-195D-4E48-BE24-BD51373C0C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B4C1FF4-195D-4E48-BE24-BD51373C0C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34220A75-C902-4EE7-BA2D-97FE96D87832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34220A75-C902-4EE7-BA2D-97FE96D87832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34220A75-C902-4EE7-BA2D-97FE96D87832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34220A75-C902-4EE7-BA2D-97FE96D87832}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
