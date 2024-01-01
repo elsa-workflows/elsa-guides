@@ -6,7 +6,7 @@
 @using Elsa.Api.Client.Resources.WorkflowDefinitions.Responses
 @using Elsa.Api.Client.Shared.Models
 @using System.Net
-@using Elsa.Api.Client.Resources.WorkflowInstances.Models
+@using Elsa.Api.Client.Extensions
 @attribute [StreamRendering]
 
 <PageTitle>Workflows</PageTitle>
@@ -17,9 +17,9 @@
 
 @if (!string.IsNullOrEmpty(_message))
 {
-    <code>
-        @_message
-    </code>
+    <div class="alert alert-success" role="alert">
+      @_message
+    </div>
 }
 
 @if (_workflowDefinitions == null)
@@ -74,8 +74,8 @@ else
 
         if (response.StatusCode == HttpStatusCode.OK)
         {
-            var responseText = await response.Content.ReadAsStringAsync();
-            _message = responseText;
+            var workflowInstanceId = response.GetWorkflowInstanceId();
+            _message = $"Started workflow instance {workflowInstanceId}.";
         }
         else
         {

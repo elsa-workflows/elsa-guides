@@ -8,7 +8,11 @@ builder.Services.AddControllers();
 builder.Services.AddElsa(elsa =>
 {
     elsa.AddWorkflow<HttpHelloWorld>();
-    elsa.UseHttp(http => http.ConfigureHttpOptions = options => options.BasePath = "/workflows");
+    elsa.UseHttp(http => http.ConfigureHttpOptions = options =>
+    {
+        options.BaseUrl = new Uri("https://localhost:5001");
+        options.BasePath = "/workflows";
+    });
 });
 
 var app = builder.Build();

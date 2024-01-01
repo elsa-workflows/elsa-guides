@@ -1,5 +1,4 @@
 using Elsa.Api.Client.Extensions;
-using Elsa.Api.Client.Options;
 using WorkflowClientApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +6,7 @@ var services = builder.Services;
 var configuration = builder.Configuration;
 
 // Add services to the container.
-var options = new ElsaClientOptions();
-configuration.GetSection("ElsaServer").Bind(options);
-services.AddElsaClient(options.BaseAddress, options.ApiKey!);
+services.AddElsaApiKeyClient(options => configuration.GetSection("ElsaServer").Bind(options));
 services.AddRazorComponents().AddInteractiveServerComponents();
 
 var app = builder.Build();

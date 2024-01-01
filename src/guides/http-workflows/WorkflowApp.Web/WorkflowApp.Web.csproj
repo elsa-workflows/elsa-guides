@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa" Version="3.0.0-preview.740" />
-    <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.0.0-preview.740" />
-    <PackageReference Include="Elsa.Http" Version="3.0.0-preview.740" />
-    <PackageReference Include="Elsa.Identity" Version="3.0.0-preview.740" />
-    <PackageReference Include="Elsa.Liquid" Version="3.0.0-preview.740" />
-    <PackageReference Include="Elsa.Workflows.Api" Version="3.0.0-preview.740" />
+    <PackageReference Include="Elsa" Version="3.0.0" />
+    <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+    <PackageReference Include="Elsa.Http" Version="3.0.0" />
+    <PackageReference Include="Elsa.Identity" Version="3.0.0" />
+    <PackageReference Include="Elsa.Liquid" Version="3.0.0" />
+    <PackageReference Include="Elsa.Workflows.Api" Version="3.0.0" />
   </ItemGroup>
-
-
+  
 </Project>

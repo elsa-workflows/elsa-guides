@@ -31,7 +31,7 @@ builder.Services.AddElsa(elsa =>
     elsa.UseCSharp();
     
     // Enable HTTP activities.
-    elsa.UseHttp();
+    elsa.UseHttp(options => options.ConfigureHttpOptions = httpOptions => httpOptions.BaseUrl = new Uri("https://localhost:5001"));
     
     // Use timer activities.
     elsa.UseScheduling();

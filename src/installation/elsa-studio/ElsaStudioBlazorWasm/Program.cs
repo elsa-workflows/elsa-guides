@@ -24,8 +24,8 @@ builder.RootComponents.RegisterCustomElsaStudioElements();
 builder.Services.AddCore();
 builder.Services.AddShell();
 builder.Services.AddRemoteBackend(
-    options => configuration.GetSection("Backend").Bind(options),
-    configureElsaClientBuilderOptions: elsaClient => { elsaClient.ConfigureHttpClientBuilder = httpClientBuilder => { httpClientBuilder.AddHttpMessageHandler<AuthenticatingApiHttpMessageHandler>(); }; });
+    elsaClient => elsaClient.AuthenticationHandler = typeof(AuthenticatingApiHttpMessageHandler),
+    options => configuration.GetSection("Backend").Bind(options));
 builder.Services.AddLoginModule();
 builder.Services.AddDashboardModule();
 builder.Services.AddWorkflowsModule();
