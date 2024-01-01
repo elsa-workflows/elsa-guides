@@ -15,10 +15,14 @@ builder.Services.AddElsa(elsa =>
     elsa.UseIdentity(identity =>
     {
         identity.UseAdminUserProvider();
-        identity.TokenOptions = tokenOptions => tokenOptions.SigningKey = "my-secret-signing-key";
+        identity.TokenOptions = tokenOptions => tokenOptions.SigningKey = "my-long-256-bit-secret-token-signing-key";
     });
     elsa.UseDefaultAuthentication();
-    elsa.UseWorkflowManagement(management => management.UseEntityFrameworkCore());
+    elsa.UseWorkflowManagement(management =>
+    {
+        management.UseEntityFrameworkCore();
+        management.AddVariableType<WeatherForecast>(category: "Weather");
+    });
     elsa.UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore());
     elsa.UseJavaScript();
     elsa.UseLiquid();
