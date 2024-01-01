@@ -2,26 +2,18 @@ using System.Net;
 using System.Net.Mime;
 using System.Text;
 using Elsa.Http;
-using Elsa.Http.Options;
 using Elsa.Workflows;
 using Elsa.Workflows.Activities;
 using Elsa.Workflows.Contracts;
-using Microsoft.Extensions.Options;
 
 namespace WorkflowApp.Web.Workflows;
 
 public class WeatherForecastWorkflow : WorkflowBase
 {
-    private readonly Uri _serverAddress;
-
-    public WeatherForecastWorkflow(IOptions<HttpActivityOptions> options)
-    {
-        _serverAddress = options.Value.BaseUrl;
-    }
-    
     protected override void Build(IWorkflowBuilder builder)
     {
-        var weatherForecastApiUrl = new Uri(_serverAddress, "weatherforecast");
+        var serverAddress = new Uri(Environment.GetEnvironmentVariable("ASPNETCORE_URLS")!.Split(';').First());
+        var weatherForecastApiUrl = new Uri(serverAddress, "weatherforecast");
         var weatherForecastResponseVariable = builder.WithVariable<ICollection<WeatherForecast>>();
 
         builder.Root = new Sequence
