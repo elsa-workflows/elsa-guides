@@ -9,10 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Elsa" Version="3.0.0" />
     <PackageReference Include="Elsa.CSharp" Version="3.0.0" />
+    <PackageReference Include="Elsa.Email" Version="3.0.0" />
     <PackageReference Include="Elsa.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.0.0" />
     <PackageReference Include="Elsa.Identity" Version="3.0.0" />
+    <PackageReference Include="Elsa.JavaScript" Version="3.0.0" />
     <PackageReference Include="Elsa.Scheduling" Version="3.0.0" />
+    <PackageReference Include="Elsa.Webhooks" Version="3.0.0" />
     <PackageReference Include="Elsa.Workflows.Api" Version="3.0.0" />
   </ItemGroup>
 

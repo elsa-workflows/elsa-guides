@@ -1,6 +1,7 @@
 using Elsa.EntityFrameworkCore.Modules.Management;
 using Elsa.EntityFrameworkCore.Modules.Runtime;
 using Elsa.Extensions;
+using Elsa.Webhooks.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddElsa(elsa =>
@@ -10,37 +11,53 @@ builder.Services.AddElsa(elsa =>
 
     // Configure Runtime layer to use EF Core.
     elsa.UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore());
-    
+
     // Default Identity features for authentication/authorization.
     elsa.UseIdentity(identity =>
     {
         identity.TokenOptions = options => options.SigningKey = "sufficiently-large-secret-signing-key"; // This key needs to be at least 256 bits long.
         identity.UseAdminUserProvider();
     });
-    
+
     // Configure ASP.NET authentication/authorization.
     elsa.UseDefaultAuthentication(auth => auth.UseAdminApiKey());
-    
+
     // Expose Elsa API endpoints.
     elsa.UseWorkflowsApi();
-    
+
     // Setup a SignalR hub for real-time updates from the server.
     elsa.UseRealTimeWorkflows();
-    
+
     // Enable C# workflow expressions
     elsa.UseCSharp();
     
+    // Enable JavaScript workflow expressions
+    elsa.UseJavaScript(options => options.AllowClrAccess = true);
+
     // Enable HTTP activities.
     elsa.UseHttp(options => options.ConfigureHttpOptions = httpOptions => httpOptions.BaseUrl = new Uri("https://localhost:5001"));
-    
+
     // Use timer activities.
     elsa.UseScheduling();
-    
+
+    // Use email activities.
+    elsa.UseEmail(email =>
+    {
+        email.ConfigureOptions = options =>
+        {
+            options.Host = "localhost";
+            options.Port = 2525;
+        };
+    });
+
     // Register custom activities from the application, if any.
     elsa.AddActivitiesFrom<Program>();
-    
+
     // Register custom workflows from the application, if any.
     elsa.AddWorkflowsFrom<Program>();
+
+    // Register custom webhook definitions from the application, if any.
+    elsa.UseWebhooks(webhooks => webhooks.WebhookOptions = options => builder.Configuration.GetSection("Webhooks").Bind(options));
 });
 
 // Configure CORS to allow designer app hosted on a different origin to invoke the APIs.
