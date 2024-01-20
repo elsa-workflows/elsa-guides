@@ -18,11 +18,7 @@ builder.Services.AddElsa(elsa =>
         identity.TokenOptions = tokenOptions => tokenOptions.SigningKey = "my-long-256-bit-secret-token-signing-key";
     });
     elsa.UseDefaultAuthentication();
-    elsa.UseWorkflowManagement(management =>
-    {
-        management.UseEntityFrameworkCore();
-        management.AddVariableType<WeatherForecast>(category: "Weather");
-    });
+    elsa.UseWorkflowManagement(management => management.UseEntityFrameworkCore());
     elsa.UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore());
     elsa.UseJavaScript();
     elsa.UseLiquid();
@@ -32,7 +28,7 @@ builder.Services.AddElsa(elsa =>
         options.BaseUrl = new Uri("https://localhost:5001");
         options.BasePath = "/workflows";
     });
-    elsa.AddWorkflow<WeatherForecastWorkflow>();
+    elsa.AddWorkflow<GetUser>();
 });
 
 var app = builder.Build();
@@ -46,30 +42,3 @@ app.UseWorkflowsApi();
 app.UseWorkflows();
 app.MapControllers();
 app.MapRazorPages();
-
-// Create a sample weather forecast API.
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-            new WeatherForecast
-            (
-                DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                Random.Shared.Next(-20, 55),
-                summaries[Random.Shared.Next(summaries.Length)]
-            ))
-        .ToArray();
-    return forecast;
-});
-
-// Run the application.
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
