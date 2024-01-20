@@ -9,6 +9,9 @@ public class HttpHelloWorld : WorkflowBase
 {
     protected override void Build(IWorkflowBuilder builder)
     {
+        var queryStringsVariable = builder.WithVariable<IDictionary<string, object>>();
+        var messageVariable = builder.WithVariable<string>();
+
         builder.Root = new Sequence
         {
             Activities =
@@ -16,11 +19,22 @@ public class HttpHelloWorld : WorkflowBase
                 new HttpEndpoint
                 {
                     Path = new("/hello-world"),
-                    CanStartWorkflow = true
+                    CanStartWorkflow = true,
+                    QueryStringData = new(queryStringsVariable)
+                },
+                new SetVariable
+                {
+                    Variable = messageVariable,
+                    Value = new(context =>
+                    {
+                        var queryStrings = queryStringsVariable.Get(context)!;
+                        var message = queryStrings.TryGetValue("message", out var messageValue) ? messageValue.ToString() : "Hello world of HTTP workflows!";
+                        return message;
+                    })
                 },
                 new WriteHttpResponse
                 {
-                    Content = new("Hello world of HTTP workflows!")
+                    Content = new(messageVariable)
                 }
             }
         };
