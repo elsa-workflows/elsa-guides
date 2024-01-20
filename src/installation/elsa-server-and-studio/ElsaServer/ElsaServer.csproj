@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElsaStudio\ElsaStudio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elsa" Version="3.0.3" />
+    <PackageReference Include="Elsa.CSharp" Version="3.0.3" />
+    <PackageReference Include="Elsa.EntityFrameworkCore" Version="3.0.3" />
+    <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.0.3" />
+    <PackageReference Include="Elsa.Identity" Version="3.0.3" />
+    <PackageReference Include="Elsa.JavaScript" Version="3.0.3" />
+    <PackageReference Include="Elsa.Liquid" Version="3.0.3" />
+    <PackageReference Include="Elsa.Scheduling" Version="3.0.3" />
+    <PackageReference Include="Elsa.Workflows.Api" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
