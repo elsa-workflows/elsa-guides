@@ -1,6 +1,7 @@
 using Elsa.EntityFrameworkCore.Modules.Management;
 using Elsa.EntityFrameworkCore.Modules.Runtime;
 using Elsa.Extensions;
+using Elsa.Webhooks.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddElsa(elsa =>
@@ -47,6 +48,15 @@ builder.Services.AddElsa(elsa =>
 
     // Register custom workflows from the application, if any.
     elsa.AddWorkflowsFrom<Program>();
+    
+    // Enable Webhooks.
+    elsa.UseWebhooks(webhooks =>
+    {
+        webhooks.WebhookOptions = options =>
+        {
+            builder.Configuration.GetSection("Webhooks").Bind(options);
+        };
+    });
 });
 
 // Configure CORS to allow designer app hosted on a different origin to invoke the APIs.

@@ -15,6 +15,7 @@
     <PackageReference Include="Elsa.JavaScript" Version="3.0.4" />
     <PackageReference Include="Elsa.Liquid" Version="3.0.4" />
     <PackageReference Include="Elsa.Scheduling" Version="3.0.4" />
+    <PackageReference Include="Elsa.Webhooks" Version="3.0.4" />
     <PackageReference Include="Elsa.Workflows.Api" Version="3.0.4" />
   </ItemGroup>
 
