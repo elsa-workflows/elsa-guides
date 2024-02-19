@@ -11,6 +11,8 @@ public class ParentWorkflow : WorkflowBase
 {
     protected override void Build(IWorkflowBuilder builder)
     {
+        var childOutput = builder.WithVariable<IDictionary<string, object>>();
+
         builder.Name = "Parent Workflow";
         builder.Root = new Sequence
         {
@@ -24,9 +26,10 @@ public class ParentWorkflow : WorkflowBase
                     Input = new(_ => new Dictionary<string, object>
                     {
                         ["Message"] = "Hello from Parent"
-                    })
+                    }),
+                    Result = new(childOutput)
                 },
-                new WriteLine("Parent completed")
+                new WriteLine(context => (string)childOutput.Get<IDictionary<string, object>>(context)!["Response"])
             }
         };
     }
