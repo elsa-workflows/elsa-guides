@@ -11,6 +11,7 @@ public class ParentWorkflow : WorkflowBase
 {
     protected override void Build(IWorkflowBuilder builder)
     {
+        builder.Name = "Parent Workflow";
         builder.Root = new Sequence
         {
             Activities =
@@ -19,7 +20,11 @@ public class ParentWorkflow : WorkflowBase
                 new DispatchWorkflow
                 {
                     WorkflowDefinitionId = new("ChildWorkflow"),
-                    WaitForCompletion = new(true)
+                    WaitForCompletion = new(true),
+                    Input = new(_ => new Dictionary<string, object>
+                    {
+                        ["Message"] = "Hello from Parent"
+                    })
                 },
                 new WriteLine("Parent completed")
             }

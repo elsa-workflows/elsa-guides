@@ -7,15 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa" Version="3.0.5" />
-    <PackageReference Include="Elsa.CSharp" Version="3.0.5" />
-    <PackageReference Include="Elsa.EntityFrameworkCore" Version="3.0.5" />
-    <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.0.5" />
-    <PackageReference Include="Elsa.Identity" Version="3.0.5" />
-    <PackageReference Include="Elsa.JavaScript" Version="3.0.5" />
-    <PackageReference Include="Elsa.Liquid" Version="3.0.5" />
-    <PackageReference Include="Elsa.Scheduling" Version="3.0.5" />
-    <PackageReference Include="Elsa.Workflows.Api" Version="3.0.5" />
+    <PackageReference Include="Elsa" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.CSharp" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.EntityFrameworkCore" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.EntityFrameworkCore.Sqlite" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.Identity" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.JavaScript" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.Liquid" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.Scheduling" Version="3.1.0-preview.1107" />
+    <PackageReference Include="Elsa.Workflows.Api" Version="3.1.0-preview.1107" />
   </ItemGroup>
 
 </Project>
