@@ -1,21 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elsa.Studio" Version="3.0.0" />
-    <PackageReference Include="Elsa.Studio.Core.BlazorWasm" Version="3.0.0" />
-    <PackageReference Include="Elsa.Studio.Login.BlazorWasm" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.9" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
+    <PackageReference Include="Elsa.Studio" Version="3.0.5" />
+    <PackageReference Include="Elsa.Studio.Core.BlazorWasm" Version="3.0.5" />
+    <PackageReference Include="Elsa.Studio.Login.BlazorWasm" Version="3.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.4" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
