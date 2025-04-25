@@ -1,3 +1,4 @@
+using Elsa.EntityFrameworkCore.Extensions;
 using Elsa.EntityFrameworkCore.Modules.Management;
 using Elsa.EntityFrameworkCore.Modules.Runtime;
 using Elsa.Extensions;
@@ -17,8 +18,8 @@ services
             identity.UseAdminUserProvider();
         })
         .UseDefaultAuthentication()
-        .UseWorkflowManagement(management => management.UseEntityFrameworkCore())
-        .UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore())
+        .UseWorkflowManagement(management => management.UseEntityFrameworkCore(ef => ef.UseSqlite()))
+        .UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore(ef => ef.UseSqlite()))
         .UseScheduling()
         .UseJavaScript()
         .UseLiquid()
