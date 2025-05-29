@@ -26,7 +26,6 @@ services
         .UseCSharp()
         .UseHttp(http => http.ConfigureHttpOptions = options => configuration.GetSection("Http").Bind(options))
         .UseWorkflowsApi()
-        .UseRealTimeWorkflows()
         .AddActivitiesFrom<Program>()
         .AddWorkflowsFrom<Program>()
     );
@@ -51,6 +50,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseWorkflowsApi();
 app.UseWorkflows();
-app.UseWorkflowsSignalRHubs();
 app.MapFallbackToPage("/_Host");
 app.Run();
