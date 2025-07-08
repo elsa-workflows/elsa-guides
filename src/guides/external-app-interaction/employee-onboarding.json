@@ -1,1 +1,334 @@
-{"$schema":"https://elsaworkflows.io/schemas/workflow-definition/v3.0.0/schema.json","id":"8bd53a1b24285c98","definitionId":"3e970eee281541c9","name":"Onboarding","description":"A simple onboarding process for demo purposes.","createdAt":"2025-07-08T14:25:48.1418256\u002B00:00","version":2,"toolVersion":"3.0.0.0","variables":[{"id":"bd549b6479e7d3be","name":"Employee","typeName":"Object","isArray":false,"storageDriverTypeName":"Elsa.Workflows.Services.WorkflowStorageDriver, Elsa.Workflows.Core"}],"inputs":[],"outputs":[],"outcomes":[],"customProperties":{},"isReadonly":false,"isSystem":false,"isLatest":true,"isPublished":true,"options":{"autoUpdateConsumingWorkflows":false},"root":{"id":"4fcee5c53a7d231b","nodeId":"Workflow1:4fcee5c53a7d231b","type":"Elsa.Flowchart","version":1,"customProperties":{"source":"FlowchartJsonConverter.cs:45","notFoundConnections":[],"canStartWorkflow":false,"runAsynchronously":false},"metadata":{},"activities":[{"taskName":{"typeName":"String","expression":{"type":"Literal","value":"Create Email Account"}},"payload":{"typeName":"ObjectDictionary","expression":{"type":"JavaScript","value":"return {\n    employee: getEmployee(),\n    description: \u0022Create an email account for the new employee\u0022\n}"}},"result":null,"id":"b39d18dd92744edd","nodeId":"Workflow1:4fcee5c53a7d231b:b39d18dd92744edd","name":"RunTask1","type":"Elsa.RunTask","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":-400,"y":260},"size":{"width":223.265625,"height":50}},"displayText":"Create Email Account"}},{"variable":{"id":"bd549b6479e7d3be","name":"Employee","typeName":"Object","storageDriverTypeName":"Elsa.Workflows.Services.WorkflowStorageDriver, Elsa.Workflows.Core"},"value":{"typeName":"Object","expression":{"type":"JavaScript","value":"getInput(\u0022Employee\u0022)"}},"id":"a2f276be6a01814b","nodeId":"Workflow1:4fcee5c53a7d231b:a2f276be6a01814b","name":"SetVariable1","type":"Elsa.SetVariable","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":-759.55078125,"y":260},"size":{"width":245.109375,"height":50}},"displayText":"Set Employee from Input"}},{"taskName":{"typeName":"String","expression":{"type":"Literal","value":"Create Slack Account"}},"payload":{"typeName":"ObjectDictionary","expression":{"type":"JavaScript","value":"return {\n    employee: getEmployee(),\n    description: \u0022Create a Slack account for the new employee.\u0022\n}"}},"result":null,"id":"7f999d32038312aa","nodeId":"Workflow1:4fcee5c53a7d231b:7f999d32038312aa","name":"RunTask2","type":"Elsa.RunTask","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":-40,"y":140},"size":{"width":222.25,"height":50}},"displayText":"Create Slack Account"}},{"taskName":{"typeName":"String","expression":{"type":"Literal","value":"Create GitHub Account"}},"payload":{"typeName":"ObjectDictionary","expression":{"type":"JavaScript","value":"return {\n    employee: getEmployee(),\n    description: \u0022Create a GitHub account for the new employee.\u0022\n}"}},"result":null,"id":"78f84d3cc03f652","nodeId":"Workflow1:4fcee5c53a7d231b:78f84d3cc03f652","name":"RunTask3","type":"Elsa.RunTask","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":-40,"y":260},"size":{"width":233.046875,"height":50}},"displayText":"Create GitHub Account"}},{"taskName":{"typeName":"String","expression":{"type":"Literal","value":"Add to HR System"}},"payload":{"typeName":"ObjectDictionary","expression":{"type":"JavaScript","value":"return {\n    employee: getEmployee(),\n    description: \u0022Add the new employee to the HR system.\u0022\n}"}},"result":null,"id":"50c91865b8ef2c09","nodeId":"Workflow1:4fcee5c53a7d231b:50c91865b8ef2c09","name":"RunTask4","type":"Elsa.RunTask","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":-40,"y":384},"size":{"width":198.265625,"height":50}},"displayText":"Add to HR System"}},{"id":"39e34650a307633e","nodeId":"Workflow1:4fcee5c53a7d231b:39e34650a307633e","name":"End1","type":"Elsa.End","version":1,"customProperties":{"canStartWorkflow":false,"runAsynchronously":false},"metadata":{"designer":{"position":{"x":339.673828125,"y":260},"size":{"width":94.328125,"height":50}}}}],"variables":[],"connections":[{"source":{"activity":"7f999d32038312aa","port":"Done"},"target":{"activity":"39e34650a307633e","port":"In"}},{"source":{"activity":"78f84d3cc03f652","port":"Done"},"target":{"activity":"39e34650a307633e","port":"In"}},{"source":{"activity":"50c91865b8ef2c09","port":"Done"},"target":{"activity":"39e34650a307633e","port":"In"}},{"source":{"activity":"a2f276be6a01814b","port":"Done"},"target":{"activity":"b39d18dd92744edd","port":"In"}},{"source":{"activity":"b39d18dd92744edd","port":"Done"},"target":{"activity":"7f999d32038312aa","port":"In"}},{"source":{"activity":"b39d18dd92744edd","port":"Done"},"target":{"activity":"78f84d3cc03f652","port":"In"}},{"source":{"activity":"b39d18dd92744edd","port":"Done"},"target":{"activity":"50c91865b8ef2c09","port":"In"}}]}}
+{
+    "$schema": "https://elsaworkflows.io/schemas/workflow-definition/v3.0.0/schema.json",
+    "id": "8bd53a1b24285c98",
+    "definitionId": "3e970eee281541c9",
+    "name": "Onboarding",
+    "description": "A simple onboarding process for demo purposes.",
+    "createdAt": "2025-07-08T14:25:48.1418256\u002B00:00",
+    "version": 2,
+    "toolVersion": "3.0.0.0",
+    "variables": [
+        {
+            "id": "bd549b6479e7d3be",
+            "name": "Employee",
+            "typeName": "Object",
+            "isArray": false,
+            "storageDriverTypeName": "Elsa.Workflows.Services.WorkflowStorageDriver, Elsa.Workflows.Core"
+        }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "outcomes": [],
+    "customProperties": {},
+    "isReadonly": false,
+    "isSystem": false,
+    "isLatest": true,
+    "isPublished": true,
+    "options": {
+        "autoUpdateConsumingWorkflows": false
+    },
+    "root": {
+        "id": "4fcee5c53a7d231b",
+        "nodeId": "Workflow1:4fcee5c53a7d231b",
+        "type": "Elsa.Flowchart",
+        "version": 1,
+        "customProperties": {
+            "source": "FlowchartJsonConverter.cs:45",
+            "notFoundConnections": [],
+            "canStartWorkflow": false,
+            "runAsynchronously": false
+        },
+        "metadata": {},
+        "activities": [
+            {
+                "taskName": {
+                    "typeName": "String",
+                    "expression": {
+                        "type": "Literal",
+                        "value": "Create Email Account"
+                    }
+                },
+                "payload": {
+                    "typeName": "ObjectDictionary",
+                    "expression": {
+                        "type": "JavaScript",
+                        "value": "return {\n    employee: getEmployee(),\n    description: \u0022Create an email account for the new employee\u0022\n}"
+                    }
+                },
+                "result": null,
+                "id": "b39d18dd92744edd",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:b39d18dd92744edd",
+                "name": "RunTask1",
+                "type": "Elsa.RunTask",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": -400,
+                            "y": 260
+                        },
+                        "size": {
+                            "width": 223.265625,
+                            "height": 50
+                        }
+                    },
+                    "displayText": "Create Email Account"
+                }
+            },
+            {
+                "variable": {
+                    "id": "bd549b6479e7d3be",
+                    "name": "Employee",
+                    "typeName": "Object",
+                    "storageDriverTypeName": "Elsa.Workflows.Services.WorkflowStorageDriver, Elsa.Workflows.Core"
+                },
+                "value": {
+                    "typeName": "Object",
+                    "expression": {
+                        "type": "JavaScript",
+                        "value": "getInput(\u0022Employee\u0022)"
+                    }
+                },
+                "id": "a2f276be6a01814b",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:a2f276be6a01814b",
+                "name": "SetVariable1",
+                "type": "Elsa.SetVariable",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": -759.55078125,
+                            "y": 260
+                        },
+                        "size": {
+                            "width": 245.109375,
+                            "height": 50
+                        }
+                    },
+                    "displayText": "Set Employee from Input"
+                }
+            },
+            {
+                "taskName": {
+                    "typeName": "String",
+                    "expression": {
+                        "type": "Literal",
+                        "value": "Create Slack Account"
+                    }
+                },
+                "payload": {
+                    "typeName": "ObjectDictionary",
+                    "expression": {
+                        "type": "JavaScript",
+                        "value": "return {\n    employee: getEmployee(),\n    description: \u0022Create a Slack account for the new employee.\u0022\n}"
+                    }
+                },
+                "result": null,
+                "id": "7f999d32038312aa",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:7f999d32038312aa",
+                "name": "RunTask2",
+                "type": "Elsa.RunTask",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": -40,
+                            "y": 140
+                        },
+                        "size": {
+                            "width": 222.25,
+                            "height": 50
+                        }
+                    },
+                    "displayText": "Create Slack Account"
+                }
+            },
+            {
+                "taskName": {
+                    "typeName": "String",
+                    "expression": {
+                        "type": "Literal",
+                        "value": "Create GitHub Account"
+                    }
+                },
+                "payload": {
+                    "typeName": "ObjectDictionary",
+                    "expression": {
+                        "type": "JavaScript",
+                        "value": "return {\n    employee: getEmployee(),\n    description: \u0022Create a GitHub account for the new employee.\u0022\n}"
+                    }
+                },
+                "result": null,
+                "id": "78f84d3cc03f652",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:78f84d3cc03f652",
+                "name": "RunTask3",
+                "type": "Elsa.RunTask",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": -40,
+                            "y": 260
+                        },
+                        "size": {
+                            "width": 233.046875,
+                            "height": 50
+                        }
+                    },
+                    "displayText": "Create GitHub Account"
+                }
+            },
+            {
+                "taskName": {
+                    "typeName": "String",
+                    "expression": {
+                        "type": "Literal",
+                        "value": "Add to HR System"
+                    }
+                },
+                "payload": {
+                    "typeName": "ObjectDictionary",
+                    "expression": {
+                        "type": "JavaScript",
+                        "value": "return {\n    employee: getEmployee(),\n    description: \u0022Add the new employee to the HR system.\u0022\n}"
+                    }
+                },
+                "result": null,
+                "id": "50c91865b8ef2c09",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:50c91865b8ef2c09",
+                "name": "RunTask4",
+                "type": "Elsa.RunTask",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": -40,
+                            "y": 384
+                        },
+                        "size": {
+                            "width": 198.265625,
+                            "height": 50
+                        }
+                    },
+                    "displayText": "Add to HR System"
+                }
+            },
+            {
+                "id": "39e34650a307633e",
+                "nodeId": "Workflow1:4fcee5c53a7d231b:39e34650a307633e",
+                "name": "End1",
+                "type": "Elsa.End",
+                "version": 1,
+                "customProperties": {
+                    "canStartWorkflow": false,
+                    "runAsynchronously": false
+                },
+                "metadata": {
+                    "designer": {
+                        "position": {
+                            "x": 339.673828125,
+                            "y": 260
+                        },
+                        "size": {
+                            "width": 94.328125,
+                            "height": 50
+                        }
+                    }
+                }
+            }
+        ],
+        "variables": [],
+        "connections": [
+            {
+                "source": {
+                    "activity": "7f999d32038312aa",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "39e34650a307633e",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "78f84d3cc03f652",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "39e34650a307633e",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "50c91865b8ef2c09",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "39e34650a307633e",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "a2f276be6a01814b",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "b39d18dd92744edd",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "b39d18dd92744edd",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "7f999d32038312aa",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "b39d18dd92744edd",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "78f84d3cc03f652",
+                    "port": "In"
+                }
+            },
+            {
+                "source": {
+                    "activity": "b39d18dd92744edd",
+                    "port": "Done"
+                },
+                "target": {
+                    "activity": "50c91865b8ef2c09",
+                    "port": "In"
+                }
+            }
+        ]
+    }
+}
