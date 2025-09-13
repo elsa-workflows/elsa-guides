@@ -1,16 +1,16 @@
+using Elsa.EntityFrameworkCore.Extensions;
 using Elsa.EntityFrameworkCore.Modules.Management;
 using Elsa.EntityFrameworkCore.Modules.Runtime;
 using Elsa.Extensions;
-using Elsa.Webhooks.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddElsa(elsa =>
 {
     // Configure Management layer to use EF Core.
-    elsa.UseWorkflowManagement(management => management.UseEntityFrameworkCore());
+    elsa.UseWorkflowManagement(management => management.UseEntityFrameworkCore(ef => ef.UseSqlite()));
 
     // Configure Runtime layer to use EF Core.
-    elsa.UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore());
+    elsa.UseWorkflowRuntime(runtime => runtime.UseEntityFrameworkCore(ef => ef.UseSqlite()));
 
     // Default Identity features for authentication/authorization.
     elsa.UseIdentity(identity =>
@@ -35,7 +35,7 @@ builder.Services.AddElsa(elsa =>
     elsa.UseJavaScript(options => options.AllowClrAccess = true);
 
     // Enable HTTP activities.
-    elsa.UseHttp(options => options.ConfigureHttpOptions = httpOptions => httpOptions.BaseUrl = new Uri("https://localhost:5001"));
+    elsa.UseHttp(options => options.ConfigureHttpOptions = httpOptions => httpOptions.BaseUrl = new("https://localhost:5001"));
 
     // Use timer activities.
     elsa.UseScheduling();
@@ -57,7 +57,10 @@ builder.Services.AddElsa(elsa =>
     elsa.AddWorkflowsFrom<Program>();
 
     // Register custom webhook definitions from the application, if any.
-    elsa.UseWebhooks(webhooks => webhooks.WebhookOptions = options => builder.Configuration.GetSection("Webhooks").Bind(options));
+    elsa.UseWebhooks(webhooks =>
+    {
+        webhooks.ConfigureSinks = options => builder.Configuration.GetSection("Webhooks").Bind(options);
+    });
 });
 
 // Configure CORS to allow designer app hosted on a different origin to invoke the APIs.
