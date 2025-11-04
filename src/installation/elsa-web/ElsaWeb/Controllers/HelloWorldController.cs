@@ -1,6 +1,6 @@
 using Elsa.Http;
+using Elsa.Workflows;
 using Elsa.Workflows.Activities;
-using Elsa.Workflows.Contracts;
 using Elsa.Workflows.Memory;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +13,7 @@ public class HelloWorldController(IWorkflowRunner workflowRunner) : ControllerBa
     [HttpGet]
     public async Task Get([FromQuery] string message = "Hello ASP.NET world!")
     {
-        var messageVariable = new Variable<string>(message);
+        var messageVariable = new Variable<string>("message", message);
         var workflow = new Sequence
         {
             Variables = { messageVariable },
